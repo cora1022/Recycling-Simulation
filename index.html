@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쓰레기 재활용율 시뮬레이션</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>쓰레기 재활용율 시뮬레이션</h1>
+            <p>우리 집 또는 조직의 쓰레기 배출량을 입력하고 재활용율을 계산해보세요.</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <div class="card">
+                    <h2>폐기물 배출량 (kg)</h2>
+                    <div class="input-group">
+                        <label for="plastic">플라스틱</label>
+                        <input type="number" id="plastic" min="0" value="0" step="0.1">
+                    </div>
+                    <div class="input-group">
+                        <label for="paper">종이류</label>
+                        <input type="number" id="paper" min="0" value="0" step="0.1">
+                    </div>
+                    <div class="input-group">
+                        <label for="metal">고철류</label>
+                        <input type="number" id="metal" min="0" value="0" step="0.1">
+                    </div>
+                    <div class="input-group">
+                        <label for="glass">유리병</label>
+                        <input type="number" id="glass" min="0" value="0" step="0.1">
+                    </div>
+                    <div class="input-group">
+                        <label for="general">일반 쓰레기</label>
+                        <input type="number" id="general" min="0" value="0" step="0.1">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>목표 재활용율 (%)</h2>
+                    <div class="input-group">
+                        <input type="range" id="target-rate" min="0" max="100" value="80">
+                        <span id="target-value">80%</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="result-section">
+                <div class="card highlight">
+                    <h2>현재 재활용율</h2>
+                    <div class="rate-display">
+                        <span id="current-rate">0.0%</span>
+                    </div>
+                    <div class="progress-container">
+                        <div id="progress-bar" class="progress-bar"></div>
+                    </div>
+                    <p id="status-message">쓰레기 양을 입력하여 시뮬레이션을 시작하세요!</p>
+                </div>
+
+                <div class="card stats">
+                    <h2>상세 통계</h2>
+                    <div class="stat-item">
+                        <span>총 배출량:</span>
+                        <span id="total-waste">0.0 kg</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>재활용 가능:</span>
+                        <span id="recyclable-waste">0.0 kg</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>목표 달성까지:</span>
+                        <span id="target-diff">-</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <section class="tips-section">
+            <div class="card">
+                <h2>재활용 팁</h2>
+                <ul id="tips-list">
+                    <li>플라스틱은 내용물을 비우고 라벨을 제거해 배출하세요.</li>
+                    <li>종이는 물기나 이물질이 묻지 않게 주의하세요.</li>
+                    <li>일반 쓰레기를 줄이는 것이 재활용율을 높이는 가장 빠른 방법입니다.</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Recycling Simulation Tool</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
